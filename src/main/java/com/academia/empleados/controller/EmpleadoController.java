@@ -53,7 +53,7 @@ public List<EmpleadoResponse> porRangoDeSalario(@RequestParam BigDecimal minimo,
 @ApiResponse(responseCode = "200", description = "Empleado encontrado")
 @ApiResponse(responseCode = "404", description = "No existe un empleado con ese id",
         content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
-public EmpleadoResponse buscar(@PathVariable Long id) {
+public EmpleadoResponse buscar(@PathVariable String id) {
     return service.buscarPorId(id);
 }
 
@@ -80,7 +80,7 @@ public ResponseEntity<EmpleadoResponse> crear(@Valid @RequestBody EmpleadoReques
         content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
 @ApiResponse(responseCode = "409", description = "El email ya lo tiene otro empleado",
         content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
-public EmpleadoResponse actualizar(@PathVariable Long id, @Valid @RequestBody EmpleadoRequest datos) {
+public EmpleadoResponse actualizar(@PathVariable String id, @Valid @RequestBody EmpleadoRequest datos) {
     return service.actualizar(id, datos);
 }
 
@@ -90,7 +90,7 @@ public EmpleadoResponse actualizar(@PathVariable Long id, @Valid @RequestBody Em
 @ApiResponse(responseCode = "204", description = "Empleado eliminado")
 @ApiResponse(responseCode = "404", description = "No existe un empleado con ese id",
         content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
-public void eliminar(@PathVariable Long id) {
+public void eliminar(@PathVariable String id) {
     service.eliminar(id);
 }
 }
