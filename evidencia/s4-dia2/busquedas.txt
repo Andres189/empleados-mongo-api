@@ -1,4 +1,4 @@
-Evidencia búsquedas y paginación · 2026-09-29 10:06 · Andres Juarez
+Evidencia búsquedas y paginación · 2026-09-29 10:09 · Andres Juarez
 
 ### 1. Primera página por defecto (10, por id) → 200
 GET 
